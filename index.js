@@ -12,7 +12,7 @@
  *******************************************************************************/
 // Our initial setup (package requires, port number setup)
 const express = require('express');
-const bodyParser = require('body-parser');
+
 const path = require('path');
 const PORT = process.env.PORT || 5000; // So we can run on heroku || (OR) localhost:5000
 
@@ -33,7 +33,7 @@ app
   // For view engine as hbs (Handlebars)
   //.engine('hbs', expressHbs({layoutsDir: 'views/layouts/', defaultLayout: 'main-layout', extname: 'hbs'})) // For handlebars
   //.set('view engine', 'hbs')
-  .use(bodyParser({ extended: false })) // For parsing the body of a POST
+  .use(express.json({ extended: false })) // For parsing the body of a POST
   .use('/ta01', ta01Routes)
   .use('/ta02', ta02Routes)
   .use('/ta03', ta03Routes)
