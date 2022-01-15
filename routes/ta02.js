@@ -2,6 +2,7 @@
 // Remember, you can make more of these placeholders yourself!
 const express = require('express');
 const router = express.Router();
+const app = express();
 
 const arrayOfUsers = ['Darcee', 'Brandon', 'Smith'];
 
@@ -19,6 +20,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/addUser', (req, res, next) => {
   const newUser = req.body.newUser;
+  console.log('newUser', req);
 // add new user
   arrayOfUsers.push(newUser);
   res.redirect('/ta02/');
@@ -36,4 +38,6 @@ router.post('/removeUser', (req, res, next) => {
   res.redirect('/ta02/');
 });
 
+
+app.use("/", router);
 module.exports = router;
