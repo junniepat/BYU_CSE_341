@@ -34,6 +34,9 @@ router.post('/removeUser', (req, res, next) => {
   if (index !== -1) {
     arrayOfUsers.splice(index, 1);
   }
+  else {
+    alert("User name does not exist")
+  }
 
   res.redirect('/ta02/');
 });
