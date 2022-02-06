@@ -17,7 +17,7 @@ const ta04Routes = require('./routes/ta04');
 const ta05Routes = require('./routes/ta05');
 
 const corsOptions = {
-    origin: 'https://cse341billsprojects.herokuapp.com/',
+    origin: "https://cse341-patrick.herokuapp.com/",
     optionsSuccessStatus: 200
 };
 
