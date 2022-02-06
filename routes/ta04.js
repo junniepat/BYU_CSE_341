@@ -1,6 +1,16 @@
 //TA04 PLACEHOLDER
 const express = require('express');
+const { init } = require('express/lib/application');
 const router = express.Router();
+
+const initial = {
+  style: 'red',
+  counter: 0
+}
+
+
+router.post('/', initial);
+
 
 router.get('/', (req, res, next) => {
   res.render('pages/ta04', {
@@ -10,5 +20,7 @@ router.get('/', (req, res, next) => {
     contentCSS: true, // For HBS
   });
 });
+
+
 
 module.exports = router;
