@@ -2,6 +2,23 @@
 <html>
 
 <head>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+    </div>
+
+
+</body>
+
+</html><!DOCTYPE html>
+<html>
+
+<head>
   <% include ../includes/header.ejs %>
 </head>
 
@@ -16,6 +33,33 @@
       </div>
     </div>
     <div class="container">
+      <div style="background:<%=style %>">
+        <form action="/ta04/change-style" method="POST">
+          <label>Change Style:</label><br>
+          <input type="color" name="color">
+          <input type="submit">
+        </form>
+      </div>
+      <hr>
+      <div>
+        <form action="/ta04/counter" method="POST">
+           <input type="hidden" name="constant" value="1">
+           <button class="btn btn-default" type="submit">+</button>
+         </form>
+         <%= counter %>
+           <form action="/ta04/counter" method="POST">
+             <input type="hidden" name="constant" value="-1">
+             <button class="btn btn-default" type="submit">-</button>
+           </form>
+        </form>
+      </div>
+      <hr>
+      <div>
+        <form action="/ta04/reset" method="POST">
+          <input type="hidden" name="reset" value="true">
+          <button class="btn btn-default" type="submit">Reset Session</button>
+        </form>
+      </div>
 
     </div>
 
