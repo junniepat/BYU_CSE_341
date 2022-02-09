@@ -10,8 +10,11 @@ router.get('/', (req, res, next) => {
     res.render('pages/signin', {
       title: 'Login to Team files',
       path: '/signin', // For pug, EJS
+      msgs: [],
       activeTA03: true, // For HBS
       contentCSS: true, // For HBS
+      isLoggedIn: false,
+      username: ""
     });
   });
 

@@ -21,7 +21,7 @@ app
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .use(bodyParser({ extended: false })) // For parsing the body of a POST
-  .use(session({ 
+  .use(session({  
     secret: 'my secret',
     resave: false,
     saveUninitialized: false,
