@@ -36,18 +36,17 @@ exports.postSignin = (req, res, next) => {
         res.render('pages/signin', {
             title: `Logged in as ${user.username}`,
             path: '/signin',
-            msgs: ['Logged In'],
+            msgs: [{msg: 'Logged In'}],
             username: user.username,
             isLoggedIn: true
         });
-        return;
     } 
-
+    console.log('failed')
     res.render('pages/signin', {
-        title: `Log In`,
-        msgs: errors.errors,
+        title: `Log In 3`,
         path: '/signin',
+        msgs: [{msg: 'Failed to log you in, check your credentials and try again'}],
+        username: user.username,
         isLoggedIn: false
     });
-
 }
